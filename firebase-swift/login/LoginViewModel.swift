@@ -15,6 +15,7 @@ class LoginViewModel: ObservableObject {
     @Published var showCreateAccountPage: Bool = false
     @Published var showErrorAlert: Bool = false
     @Published var errorMessage: String = ""
+    @Published var isLoading: Bool = false
         
     init() {
         checkUserStatus()
@@ -29,29 +30,35 @@ class LoginViewModel: ObservableObject {
     }
     
     func signIn(email: String, password: String, completion: @escaping (Result<AuthDataResult?, Error>) -> ()) {
+        isLoading = true
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] result , error in
             guard result != nil, error == nil else {
                 completion(.failure(error!))
+                self?.isLoading = false
                 return
             }
             
             completion(.success(result))
             DispatchQueue.main.async {
                 self?.signedIn = true
+                self?.isLoading = false
             }
         }
     }
     
     func signUp(email: String, password: String, completion: @escaping (Result<AuthDataResult?, Error>) -> ()) {
+        isLoading = true
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             guard result != nil, error == nil else {
                 completion(.failure(error!))
+                self?.isLoading = false
                 return
             }
                         
             completion(.success(result))
             DispatchQueue.main.async {
                 self?.signedIn = true
+                self?.isLoading = false
             }
 
         }

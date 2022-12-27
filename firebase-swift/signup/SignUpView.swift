@@ -72,13 +72,18 @@ struct SignUpView: View {
                         }
                     }
                 } label: {
-                    Text("Create Account")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.accentColor)
-                        .cornerRadius(10)
+                    ZStack {
+                        Text("Create Account")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
+                        if vm.isLoading {
+                            ProgressView()
+                        }
+                    }
                 }
                 .disabled(vm.email.isEmpty || vm.password.isEmpty)
                 
