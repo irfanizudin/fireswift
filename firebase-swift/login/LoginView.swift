@@ -57,7 +57,18 @@ struct LoginView: View {
             }.padding(.vertical, 30)
             
             Button {
-                vm.signIn(email: vm.email, password: vm.password)
+                vm.signIn(email: vm.email, password: vm.password) { result in
+                    switch result {
+                    case .success(let data):
+                        print(data as Any)
+                    case .failure(let error):
+                        vm.errorMessage = error.localizedDescription
+                        print(error.localizedDescription)
+                        if !vm.errorMessage.isEmpty {
+                            vm.showErrorAlert = true
+                        }
+                    }
+                }
             } label: {
                 Text("Login")
                     .font(.headline)
@@ -84,6 +95,12 @@ struct LoginView: View {
             Spacer()
         }
         .padding(.horizontal, 30)
+        .alert("Login Failed", isPresented: $vm.showErrorAlert, actions: {
+            Button("OK", role: .none) {
+            }
+        }, message: {
+            Text(vm.errorMessage)
+        })
     }
 }
 

@@ -66,9 +66,11 @@ struct SignUpView: View {
                         case .failure(let error):
                             vm.errorMessage = error.localizedDescription
                             print(error.localizedDescription)
+                            if !vm.errorMessage.isEmpty {
+                                vm.showErrorAlert = true
+                            }
                         }
                     }
-                    
                 } label: {
                     Text("Create Account")
                         .font(.headline)
