@@ -19,10 +19,15 @@ struct LoginView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150)
-            Text("Fireswift Login")
+            Text("Fireswift")
+                .font(.title2)
+                .bold()
+                .padding(.bottom, 20)
+            Text("Login")
                 .font(.title)
                 .bold()
-                .padding()
+                .padding(.bottom, 40)
+
             VStack {
                 VStack (alignment: .leading) {
                     Text("Email")
@@ -61,6 +66,19 @@ struct LoginView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.accentColor)
                     .cornerRadius(10)
+            }
+            .disabled(vm.email.isEmpty || vm.password.isEmpty)
+            
+            Button {
+                vm.showCreateAccountPage = true
+            } label: {
+                Text("Create Account")
+                    .font(.headline)
+                    .foregroundColor(Color.accentColor)
+                    .padding()
+            }
+            .fullScreenCover(isPresented: $vm.showCreateAccountPage) {
+                SignUpView()
             }
 
             Spacer()
