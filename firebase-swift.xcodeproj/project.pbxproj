@@ -11,6 +11,8 @@
 		2EEB8E6E295A96CD008DDF55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB8E6D295A96CD008DDF55 /* ContentView.swift */; };
 		2EEB8E70295A96CE008DDF55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EEB8E6F295A96CE008DDF55 /* Assets.xcassets */; };
 		2EEB8E73295A96CE008DDF55 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EEB8E72295A96CE008DDF55 /* Preview Assets.xcassets */; };
+		2EEB8E7B295A9B21008DDF55 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB8E7A295A9B21008DDF55 /* LoginView.swift */; };
+		2EEB8E7D295A9B65008DDF55 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB8E7C295A9B65008DDF55 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		2EEB8E6D295A96CD008DDF55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2EEB8E6F295A96CE008DDF55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EEB8E72295A96CE008DDF55 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2EEB8E7A295A9B21008DDF55 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2EEB8E7C295A9B65008DDF55 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		2EEB8E6A295A96CD008DDF55 /* firebase-swift */ = {
 			isa = PBXGroup;
 			children = (
+				2EEB8E79295A9B03008DDF55 /* login */,
 				2EEB8E6B295A96CD008DDF55 /* firebase_swiftApp.swift */,
 				2EEB8E6D295A96CD008DDF55 /* ContentView.swift */,
 				2EEB8E6F295A96CE008DDF55 /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				2EEB8E72295A96CE008DDF55 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2EEB8E79295A9B03008DDF55 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				2EEB8E7A295A9B21008DDF55 /* LoginView.swift */,
+				2EEB8E7C295A9B65008DDF55 /* LoginViewModel.swift */,
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +151,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EEB8E7D295A9B65008DDF55 /* LoginViewModel.swift in Sources */,
+				2EEB8E7B295A9B21008DDF55 /* LoginView.swift in Sources */,
 				2EEB8E6E295A96CD008DDF55 /* ContentView.swift in Sources */,
 				2EEB8E6C295A96CD008DDF55 /* firebase_swiftApp.swift in Sources */,
 			);
