@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+   
+    @StateObject var vm = LoginViewModel()
+    
     var body: some View {
-        VStack {
-            LoginView()
+        NavigationView {
+            VStack {
+                if vm.signedIn {
+                    Text("You are logged in")
+                } else {
+                    LoginView()
+                }
+            }
+            .onAppear {
+                vm.signedIn = vm.isSignedIn
+            }
         }
     }
 }

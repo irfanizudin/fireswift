@@ -52,7 +52,7 @@ struct LoginView: View {
             }.padding(.vertical, 30)
             
             Button {
-                //login
+                vm.signIn(email: vm.email, password: vm.password)
             } label: {
                 Text("Login")
                     .font(.headline)
