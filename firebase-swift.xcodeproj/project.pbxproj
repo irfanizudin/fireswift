@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2E4A17062967D7C300A64F3F /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A17052967D7C300A64F3F /* NoteListView.swift */; };
 		2E4A17082967D80800A64F3F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A17072967D80800A64F3F /* Note.swift */; };
+		2E4A170A29692C5700A64F3F /* NoteEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A170929692C5700A64F3F /* NoteEditorView.swift */; };
+		2E4A170C29692CCA00A64F3F /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A170B29692CCA00A64F3F /* NoteViewModel.swift */; };
 		2E776198295B1263002902C2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E776197295B1263002902C2 /* SignUpView.swift */; };
 		2EEB8E6C295A96CD008DDF55 /* firebase_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB8E6B295A96CD008DDF55 /* firebase_swiftApp.swift */; };
 		2EEB8E6E295A96CD008DDF55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB8E6D295A96CD008DDF55 /* ContentView.swift */; };
@@ -24,6 +26,8 @@
 		10E2C8EED0394F1A897BA516 /* Pods_firebase_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebase_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4A17052967D7C300A64F3F /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		2E4A17072967D80800A64F3F /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		2E4A170929692C5700A64F3F /* NoteEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEditorView.swift; sourceTree = "<group>"; };
+		2E4A170B29692CCA00A64F3F /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
 		2E776197295B1263002902C2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2EEB8E68295A96CD008DDF55 /* firebase-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEB8E6B295A96CD008DDF55 /* firebase_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase_swiftApp.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			children = (
 				2E4A17072967D80800A64F3F /* Note.swift */,
 				2E4A17052967D7C300A64F3F /* NoteListView.swift */,
+				2E4A170929692C5700A64F3F /* NoteEditorView.swift */,
+				2E4A170B29692CCA00A64F3F /* NoteViewModel.swift */,
 			);
 			path = notes;
 			sourceTree = "<group>";
@@ -251,11 +257,13 @@
 			files = (
 				2EEB8E7D295A9B65008DDF55 /* LoginViewModel.swift in Sources */,
 				2E776198295B1263002902C2 /* SignUpView.swift in Sources */,
+				2E4A170C29692CCA00A64F3F /* NoteViewModel.swift in Sources */,
 				2E4A17082967D80800A64F3F /* Note.swift in Sources */,
 				2E4A17062967D7C300A64F3F /* NoteListView.swift in Sources */,
 				2EEB8E7B295A9B21008DDF55 /* LoginView.swift in Sources */,
 				2EEB8E6E295A96CD008DDF55 /* ContentView.swift in Sources */,
 				2EEB8E6C295A96CD008DDF55 /* firebase_swiftApp.swift in Sources */,
+				2E4A170A29692C5700A64F3F /* NoteEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

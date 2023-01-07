@@ -16,28 +16,16 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 if vm.signedIn {
-                    VStack {
-                        Text("You are logged in")
-                        Button {
-                            vm.signOut()
-                        } label: {
-                            Text("Sign Out")
-                                .font(.headline)
-                                .foregroundColor(.white)
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .background(Color.accentColor)
-                                .cornerRadius(10)
-                        }
-                    }
-                    .padding(.horizontal, 30)
+//                    VStack {
+                        NoteListView()
+//                    }
                 } else {
                     LoginView()
                 }
             }
         }
         .onAppear {
-//            vm.checkUserStatus()
+            // vm.checkUserStatus()
         }
         
     }

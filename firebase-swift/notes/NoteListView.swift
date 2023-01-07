@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NoteListView: View {
 
+    @StateObject var vm = LoginViewModel()
     var notes = [
         Note(text: "Learn React"),
         Note(text: "Learn Swift"),
@@ -17,14 +18,38 @@ struct NoteListView: View {
 
     var body: some View {
         NavigationView {
-            List(notes, id: \.self) { note in
+            List(notes, id: \.id) { note in
                 NavigationLink {
-                    Text(note.text)
+                    NoteEditorView(noteText: note.text)
                 } label: {
                     Text(note.text)
                 }
             }
             .navigationTitle("Notes")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        vm.signOut()
+                        vm.showSignOutAlert = true
+                    } label: {
+                        Image(systemName: "ipad.and.arrow.forward")
+                            .foregroundColor(Color(UIColor.label))
+                    }
+
+                }
+            }
+            .alert("Sign Out", isPresented: $vm.showSignOutAlert, actions: {
+                Button("Yes", role: .none) {
+                    vm.showLogin = true
+                }
+                Button("Cancel", role: .cancel) {
+                }
+            }, message: {
+                Text("Are you sure want to sign out?")
+            })
+            .fullScreenCover(isPresented: $vm.showLogin) {
+                LoginView()
+            }
         }
 
     }
