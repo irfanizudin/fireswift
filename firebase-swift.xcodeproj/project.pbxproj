@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4A17062967D7C300A64F3F /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A17052967D7C300A64F3F /* NoteListView.swift */; };
+		2E4A17082967D80800A64F3F /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4A17072967D80800A64F3F /* Note.swift */; };
 		2E776198295B1263002902C2 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E776197295B1263002902C2 /* SignUpView.swift */; };
 		2EEB8E6C295A96CD008DDF55 /* firebase_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB8E6B295A96CD008DDF55 /* firebase_swiftApp.swift */; };
 		2EEB8E6E295A96CD008DDF55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEB8E6D295A96CD008DDF55 /* ContentView.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		10E2C8EED0394F1A897BA516 /* Pods_firebase_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebase_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4A17052967D7C300A64F3F /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
+		2E4A17072967D80800A64F3F /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		2E776197295B1263002902C2 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		2EEB8E68295A96CD008DDF55 /* firebase-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EEB8E6B295A96CD008DDF55 /* firebase_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase_swiftApp.swift; sourceTree = "<group>"; };
@@ -45,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E4A17042967D78900A64F3F /* notes */ = {
+			isa = PBXGroup;
+			children = (
+				2E4A17072967D80800A64F3F /* Note.swift */,
+				2E4A17052967D7C300A64F3F /* NoteListView.swift */,
+			);
+			path = notes;
+			sourceTree = "<group>";
+		};
 		2E776196295B123E002902C2 /* signup */ = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +87,7 @@
 		2EEB8E6A295A96CD008DDF55 /* firebase-swift */ = {
 			isa = PBXGroup;
 			children = (
+				2E4A17042967D78900A64F3F /* notes */,
 				2E776196295B123E002902C2 /* signup */,
 				2EEB8E79295A9B03008DDF55 /* login */,
 				2EEB8E6B295A96CD008DDF55 /* firebase_swiftApp.swift */,
@@ -190,6 +204,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		50630EFB6EC0353B8F520506 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -236,6 +251,8 @@
 			files = (
 				2EEB8E7D295A9B65008DDF55 /* LoginViewModel.swift in Sources */,
 				2E776198295B1263002902C2 /* SignUpView.swift in Sources */,
+				2E4A17082967D80800A64F3F /* Note.swift in Sources */,
+				2E4A17062967D7C300A64F3F /* NoteListView.swift in Sources */,
 				2EEB8E7B295A9B21008DDF55 /* LoginView.swift in Sources */,
 				2EEB8E6E295A96CD008DDF55 /* ContentView.swift in Sources */,
 				2EEB8E6C295A96CD008DDF55 /* firebase_swiftApp.swift in Sources */,
