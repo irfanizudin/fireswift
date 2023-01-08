@@ -33,6 +33,15 @@ struct NoteEditorView: View {
             print("id = ", id as Any)
             print("noteText = ", noteText)
         }
+        .onDisappear {
+            if id == nil {
+                vm.addNote(text: vm.noteText)
+            } else {
+                if let id = id {
+                    vm.updateNote(id: id, text: vm.noteText)
+                }
+            }
+        }
         .onTapGesture {
             isFocused = true
         }
