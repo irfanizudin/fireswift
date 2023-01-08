@@ -10,17 +10,13 @@ import SwiftUI
 struct NoteListView: View {
 
     @StateObject var vm = LoginViewModel()
-    var notes = [
-        Note(text: "Learn React"),
-        Note(text: "Learn Swift"),
-        Note(text: "Learn UIKit")
-    ]
-
+    @StateObject var vmNote = NoteViewModel()
+    
     var body: some View {
         NavigationView {
-            List(notes, id: \.id) { note in
+            List(vmNote.notes, id: \.self) { note in
                 NavigationLink {
-                    NoteEditorView(noteText: note.text)
+                    NoteEditorView(id: note.id, noteText: note.text)
                 } label: {
                     Text(note.text)
                 }
@@ -29,17 +25,28 @@ struct NoteListView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        vm.signOut()
                         vm.showSignOutAlert = true
                     } label: {
                         Image(systemName: "ipad.and.arrow.forward")
-                            .foregroundColor(Color(UIColor.label))
+                            .foregroundColor(.accentColor)
                     }
 
+                }
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Spacer()
+                    Text("\(vmNote.notes.count) notes")
+                    Spacer()
+                    NavigationLink {
+                        NoteEditorView(noteText: "")
+                    } label: {
+                        Image(systemName: "square.and.pencil")
+                            .foregroundColor(.accentColor)
+                    }
                 }
             }
             .alert("Sign Out", isPresented: $vm.showSignOutAlert, actions: {
                 Button("Yes", role: .none) {
+                    vm.signOut()
                     vm.showLogin = true
                 }
                 Button("Cancel", role: .cancel) {
