@@ -16,7 +16,6 @@ class LoginViewModel: ObservableObject {
     @Published var showErrorAlert: Bool = false
     @Published var errorMessage: String = ""
     @Published var isLoading: Bool = false
-    @Published var showLogin: Bool = false
     @Published var showSignOutAlert: Bool = false
         
     init() {

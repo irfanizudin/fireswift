@@ -13,21 +13,7 @@ struct ContentView: View {
     @StateObject var vm = LoginViewModel()
     
     var body: some View {
-        NavigationView {
-            VStack {
-                if vm.signedIn {
-//                    VStack {
-                        NoteListView()
-//                    }
-                } else {
-                    LoginView()
-                }
-            }
-        }
-        .onAppear {
-            // vm.checkUserStatus()
-        }
-        
+        NoteListView()
     }
 }
 
