@@ -60,4 +60,14 @@ class NoteViewModel: ObservableObject {
         }
     }
     
+    func deleteNote(id: String) {
+        dbReference.document(id).delete { error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Note with id \(id) has been deleted")
+            }
+        }
+    }
+    
 }

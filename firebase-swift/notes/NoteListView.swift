@@ -20,6 +20,14 @@ struct NoteListView: View {
                 } label: {
                     Text(note.text)
                 }
+                .swipeActions(content: {
+                    Button(role: .destructive) {
+                        guard let id = note.id else { return }
+                        vmNote.deleteNote(id: id)
+                    } label: {
+                        Image(systemName: "trash")
+                    }
+                })
             }
             .navigationTitle("Notes")
             .toolbar {
