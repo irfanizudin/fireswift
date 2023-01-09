@@ -35,10 +35,20 @@ struct NoteEditorView: View {
         }
         .onDisappear {
             if id == nil {
-                vm.addNote(text: vm.noteText)
+                if vm.noteText != "" {
+                    vm.addNote(text: vm.noteText)
+                    print("saved")
+                } else {
+                    print("empty note")
+                }
             } else {
                 if let id = id {
-                    vm.updateNote(id: id, text: vm.noteText)
+                    if vm.noteText != "" {
+                        vm.updateNote(id: id, text: vm.noteText)
+                    } else {
+                        vm.updateNote(id: id, text: vm.noteText)
+                        vm.deleteNote(id: id)
+                    }
                 }
             }
         }
@@ -49,14 +59,7 @@ struct NoteEditorView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button("Done") {
                     isFocused = false
-                    if id == nil {
-                        vm.addNote(text: vm.noteText)
-                        dismiss()
-                    } else {
-                        if let id = id {
-                            vm.updateNote(id: id, text: vm.noteText)
-                        }
-                    }
+                    dismiss()
                 }
             }
         }

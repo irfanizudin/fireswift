@@ -51,7 +51,7 @@ class NoteViewModel: ObservableObject {
             "text": text,
             "updatedAt": Timestamp(date: Date())
         ]
-        dbReference.document(id).updateData(data) { error in
+        let _ = dbReference.document(id).updateData(data) { error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -61,7 +61,7 @@ class NoteViewModel: ObservableObject {
     }
     
     func deleteNote(id: String) {
-        dbReference.document(id).delete { error in
+        let _ = dbReference.document(id).delete { error in
             if let error = error {
                 print(error.localizedDescription)
             } else {
