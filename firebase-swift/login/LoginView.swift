@@ -19,7 +19,7 @@ struct LoginView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150)
-            Text("Fireswift")
+            Text("FireNotes")
                 .font(.title2)
                 .bold()
                 .padding(.bottom, 20)
